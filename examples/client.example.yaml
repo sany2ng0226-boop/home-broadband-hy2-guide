@@ -1,0 +1,9 @@
+# Template only. Keep the filled file outside this repository.
+server: "REPLACE_WITH_REACHABLE_HOST:REPLACE_WITH_UDP_PORT"
+auth: REPLACE_WITH_THE_SAME_NEW_PASSWORD
+tls:
+  sni: REPLACE_WITH_CERTIFICATE_NAME
+  # If using a private CA, add: ca: /absolute/path/to/trusted-ca.crt
+  insecure: false
+socks5:
+  listen: "127.0.0.1:REPLACE_WITH_LOCAL_SOCKS_PORT"

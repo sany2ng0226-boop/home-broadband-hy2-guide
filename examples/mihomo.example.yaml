@@ -1,0 +1,25 @@
+# Template only. Replace every REPLACE_WITH_* value and keep the result outside Git.
+# This uses a local system proxy. Apps that ignore the system proxy need separate testing.
+mixed-port: REPLACE_WITH_LOCAL_MIXED_PORT
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+  - name: HOME-HY2
+    type: hysteria2
+    server: REPLACE_WITH_REACHABLE_HOST
+    port: REPLACE_WITH_UDP_PORT
+    password: REPLACE_WITH_NEW_RANDOM_PASSWORD
+    sni: REPLACE_WITH_CERTIFICATE_NAME
+    skip-cert-verify: false
+    udp: true
+proxy-groups:
+  - name: OVERSEAS
+    type: select
+    proxies:
+      - HOME-HY2
+      - DIRECT
+rules:
+  # Replace with the exact domains the user authorizes for overseas egress.
+  - DOMAIN-SUFFIX,example.org,OVERSEAS
+  - MATCH,DIRECT

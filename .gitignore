@@ -1,0 +1,12 @@
+*
+!.gitignore
+!README.md
+!PUBLISH-CHECKLIST.md
+!LICENSE
+!LICENSE.md
+!LICENSE.txt
+!docs/
+!docs/*.md
+!examples/
+!examples/*.example.yaml
+
